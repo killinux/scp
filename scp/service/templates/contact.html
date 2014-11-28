@@ -1,0 +1,60 @@
+<<<<<<< HEAD
+{% extends "base.html" %}
+
+<div class="mainbar">
+{% block mainbar %}
+<div class="article">
+    <h2>
+        <span>留言板</span>
+    </h2>
+    <div class="clr"></div>
+    <p></p>
+    <p></p>
+    <p>如果您对本站有好的建议，请不吝留下宝贵意见。如果您有工作上的业务需求也可以在此写下，我们会及时跟进。</p>
+</div>
+<div id="SOHUCS"></div>
+
+<script type="text/javascript">
+    (function() {
+        var appid = 'cyqHNFzJv', conf = 'prod_fd5c905bcd8c3348ad1b35d7231ee2b1';
+        var doc = document, s = doc.createElement('script'), h = doc
+                .getElementsByTagName('head')[0]
+                || doc.head || doc.documentElement;
+        s.type = 'text/javascript';
+        s.charset = 'utf-8';
+        s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf='
+                + conf + '&appid=' + appid;
+        h.insertBefore(s, h.firstChild);
+    })()
+</script>
+=======
+{% extends "base.html" %}
+
+<div class="mainbar">
+{% block mainbar %}
+<div class="article">
+    <h2>
+        <span>留言板</span>
+    </h2>
+    <div class="clr"></div>
+    <p></p>
+    <p></p>
+    <p>如果您对本站有好的建议，请不吝留下宝贵意见。如果您有工作上的业务需求也可以在此写下，我们会及时跟进。</p>
+</div>
+<div id="SOHUCS"></div>
+
+<script type="text/javascript">
+    (function() {
+        var appid = 'cyqHNFzJv', conf = 'prod_fd5c905bcd8c3348ad1b35d7231ee2b1';
+        var doc = document, s = doc.createElement('script'), h = doc
+                .getElementsByTagName('head')[0]
+                || doc.head || doc.documentElement;
+        s.type = 'text/javascript';
+        s.charset = 'utf-8';
+        s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf='
+                + conf + '&appid=' + appid;
+        h.insertBefore(s, h.firstChild);
+    })()
+</script>
+>>>>>>> 9ab4a72903e03a979ff5788046ce392a122a30b5
+{% endblock mainbar %}

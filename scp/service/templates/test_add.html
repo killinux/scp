@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block mainbar %}
+    <!--
+    <form  method="post" enctype="multipart/form-data" >
+        {{ form.as_table }}
+        <input name="submit" type="submit" value="提交" />
+        {% csrf_token %}
+    </form>
+     -->
+
+
+        <div class="div-test-add">
+            <div class="logintitle criadd-info upload-info">
+                <h3>新建脚本</h3>
+                {% if form.errors %}
+                      <font color="red">请输入一个正确的脚本名称和脚本文件!</font>
+                    {% endif %}
+                <hr/>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <ul class="logininfo">
+
+                        <li><span>脚本文件：</span>
+                            <!--==自定义上传文件 按钮样式 ==-->
+                            <div class="file-box">
+                                <input type='text' name='test_name' id='textfield' class='txt'/>
+                                <input type='button' class="btn btn-info chscrit-btn" value='选择脚本'/>
+                                <input style="margin-left:294px;width:84px;" id="id_test_file" type="file" name="test_file" class="file"  size="28"
+                                       />
+                            </div>
+                        </li>
+                         <li><span>脚本说明：</span><input class="addscr-btn1" id="id_test_name" type="text" name="script_description" />
+                        </li>
+
+                        <span>&nbsp;</span>
+                             <input  type="submit" value="上传" name="submit" class="btn btn-info uplaod-btn"   />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <blockquote>
+                <footer>使用说明：首先需要测试者在本地调试好Jmter的测试脚本，然后上传Jmeter脚本文件，根据需求选择适量的加压机，然后执行测试，测试完成后会生成侧i说报告</footer>
+            </blockquote>
+
+        </div>
+    </form>
+
+
+{% endblock mainbar %}

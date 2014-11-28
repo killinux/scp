@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block mainbar %}
+    <!--
+    <form  method="post" enctype="multipart/form-data" >
+        {{ form.as_table }}
+        <input name="submit" type="submit" value="提交" />
+        {% csrf_token %}
+    </form>
+     -->
+<script>
+    $(function(){
+        function loadAbleJmeter(){
+            $("#ableCheckBox").html('loading...');
+            $.get("/jmeter_list/",function(data){
+                eval("var arr="+data);
+                var s='';
+                for(var x in arr){
+                    s+='<label><input type="checkbox" id="" name="jmeter_list" value=""> 机器'+arr[x]+'</label>';
+                }
+                var d=new Date();
+                s+="&nbsp;&nbsp;&nbsp;&nbsp;刷新时间："+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+                $("#ableCheckBox").html(s);
+            });
+        }
+        $("#checkAbleBtn").click(function(){
+            loadAbleJmeter();
+        });
+        loadAbleJmeter();
+    })
+</script>
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="div-run">
+            <div class="logintitle run-info">
+                <form name='form1' method='POST'>
+                    <ul class="logininfo run-ul">
+                         <li><span>选择测试脚本：</span>
+                             <select  name="scripts" class="form-control run-select" id="id_script">
+                                {% for script in scripts %}
+                                    <option value="">{{ script }}</option>
+                                {% endfor %}
+                             </select>
+                        </li>
+                         <li>
+                          <div class="check-box">
+                           <input name="check" id="checkAbleBtn" type="button" class="btn btn-info" value="检测当前可用加压机"/>
+                           <div id="ableCheckBox" name="ableCheckBox" style="display:inline-block"></div>
+<!--                             <label>
+                               <label> &nbsp; &nbsp; </label>
+                                  <input type="checkbox" id="inlineCheckbox1" name="select" value="option1"> 机器 1
+                               </label> &nbsp
+                               <label >
+                                  <input type="checkbox" id="inlineCheckbox2"  name="select" value="option2"> 机器 2
+                               </label> &nbsp
+                               <label>
+                                  <input type="checkbox" id="inlineCheckbox3" name="select" value="option3"> 机器 3
+                               </label>&nbsp-->
+                           </div>
+                        </li>
+                        <li><span>执行说明：</span><input class="addscr-btn1" id="id_test_name" type="text" name="perform_description" maxlength="50"/>
+                        </li>
+                        <li>
+                            <input name="submit" type="submit"  value="执行测试"/>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+               <blockquote>
+                  <footer>使用说明：为了保证良好的测试环境，一个加压机上只运行一个Jmeter，需要实时去检查空闲的加压机，然后按测试需要，选择适量加压机，一般并发200线程以内使用一个加压机，201-500使用2太加压机。</footer>
+               </blockquote>
+
+        </div>
+    </form>
+
+
+{% endblock mainbar %}

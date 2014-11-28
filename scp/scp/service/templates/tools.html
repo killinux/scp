@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+
+
+<head>
+
+<title>搜狐测试组</title>
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="Shortcut Icon" href="static/images/logo_50x34.png" />
+<script type="text/javascript" src="static/js/tools.js"></script>
+<script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="static/js/mouse.js"></script>
+
+<!-- CuFon ends -->
+</head>
+<body >
+	<div class="main">
+		<div class="header">
+			<div class="header_resize">
+				<div class="logo">
+					<h1>
+						<img src="/static/images/logo.png" width="190px" height="55px"><small>测试是一个很必要且很重要的环节</small>
+					</h1>
+				</div>
+				<div class="menu_nav">
+					<ul>
+						<li><a href="index.html"><span>首页</span></a></li>
+						<li><a href="service.html"><span>服务支持</span></a></li>
+						<li  class="active"><a href="tools.html"><span>工具分享</span></a></li>
+						<li><a href="contact.html"><span>关于我们</span></a></li>
+					</ul>
+				</div>
+				<div class="clr"></div>
+
+				<div class="clr"></div>
+				<div class="/static/images/header_img"></div>
+			</div>
+		</div>
+		<div class="clr"></div>
+		<div class="content">
+			<div class="content_resize">
+				<div class="mainbar">
+					<div class="article">
+					<div id ="0" >
+					<img alt="" src="/static/images/service.png">
+								<p>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;软件测试就是利用测试工具按照测试方案和流程对产品进行功能和性能测试，甚至根据需要编写不同的测试工具，设计和维护测试系统，对测试方案可能出现的问题进行分析和评估。执行测试用例后，需要跟踪故障，以确保开发的产品适合需求。</p>
+     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们为搜狐多个核心项目提供各方面的测试服务，典型的产品线包括PassPort，搜狐私有云，搜狐云存储，我的搜狐，畅言，搜狐企业邮箱，CMS等等。我们有完善的性能测试和自动化测试解决方案，根据您的需求定制测试计划。</p>
+					</div>
+					<div id="1" style="display: none">
+							<h2>
+								<span>JMeter 性能测试</span>
+							</h2>
+							<div class="clr"></div>
+
+							<p></p>
+							<p>
+								 使用说明：<br>
+								 1.必需在你JMX文件中添加“生成概要结果”监听器，否则将收集不到测试结果；<br>
+								 2.确保你的JMX未调用第三方的JAR，因为服务器的JMeter为官方标准配置，无第三方JAR，后续会扩展；<br>
+								 3.服务器开始加压，此过程所需时间依据你JMX的设定；<br>
+								 4.线程最好不要超过1000，目前服务器性能较差；<br>
+							</p>
+							<form action="test_JM_doJM" method="post" enctype="multipart/form-data" target="_blank" >
+								<p></p>
+								<h3>
+									在此上传你的JMX文件：<input name="jmFile" type="file" size="20"
+										required="required"><br> <br> <input
+										type="submit" value="开始测试">
+								</h3>
+								<p></p>
+						 	</form>
+							<!-- 	<form action="test_JM_doJTL" method="post" enctype="multipart/form-data" target="_blank" >
+								<p></p>
+								<h3>
+									在此上传你的JTL文件：<input name="jmFile" type="file" size="20"
+										required="required"><input type="submit" value="解析JTL">
+								</h3>
+								<p></p>
+							</form>
+							<p></p>-->
+							<p>PS:<br>
+								   官方下载地址：<a href="http://apache.fayea.com/apache-mirror//jmeter/binaries/apache-jmeter-2.9.zip" target="_blank">http://apache.fayea.com/apache-mirror//jmeter/binaries/apache-jmeter-2.9.zip</a><br>
+							   官方帮助文档：<a href="http://wiki.apache.org/jmeter/" target="_blank">http://wiki.apache.org/jmeter/</a></p>
+						</div>
+						<div id="2" style="display: none">
+					
+						<h2>
+								<span>WebBench 性能测试</span>
+							</h2>
+							<div class="clr"></div>
+
+							<p></p>
+							<p>使用说明：<br>
+								1.目标地址示例: http://127.0.0.1/sce/LoadTest.jsp<br>
+								2.持续时间（秒）示例：1000<br>
+								3.总并发数示例：300<br>
+							</p>
+								<form  action="http://192.168.111.50:18080/sohutest/test_WB_doWB" target="_blank" >
+								<p></p><h3>
+								目标地址：<input type="text" name="host" required="required" size="30"><br>
+									 总并发数：<input type="text" name="simul" required="required"
+										size="30"><br> 
+									持续时间：<input type="text" name="time"
+										required="required" size="30"><br><br>
+									
+						
+								 <input type="submit" value="开始测试"></h3>
+								 <p></p>
+								
+								</form>
+								 	 <p></p>
+								 <p>PS:<br>
+								 下载地址：<a href="http://home.tiscali.cz/~cz210552/distfiles/webbench-1.5.tar.gz">http://home.tiscali.cz/~cz210552/distfiles/webbench-1.5.tar.gz</a></p>
+							</div>
+					<div id="3" style="display: none">
+							<h2>
+								<span>ApachBench 性能测试</span>
+							</h2>
+							<div class="clr"></div>
+
+							<p></p>
+							<p>使用说明：<br>
+								1.目标地址示例: http://10.10.127.91/getdata?key=334087882<br>
+								2.总请求数示例：1000<br>
+								3.总并发数示例：300<br>
+							</p>
+							<form action="http://192.168.111.50:18080/sohutest/test_AB_doAB"  method="post" target="_blank" >
+						
+							<p></p>
+							<h3>
+								 	目标地址：<input type="text" name="host" required="required" size="30"><br>
+									总请求数：<input type="text" name="requ" required="required" size="30"><br>
+									总并发数：<input type="text" name="simul" required="required" size="30"><br><br>
+								 		<input type="submit" value="开始测试">
+								</h3>
+						<p></p>
+					
+							</form>
+						<p>PS:<br>
+						参考文档：<a href="http://starlight00.blog.163.com/blog/static/46518320133932054837/">http://starlight00.blog.163.com/blog/static/46518320133932054837/</a></p>
+						</div>
+				
+					</div>
+
+
+				</div>
+				<div class="sidebar">
+					<div class="gadget">
+
+						<!--/weather -->
+
+
+					</div>
+					<div class="gadget">
+						<h2>我狐工具</h2>
+						<div class="clr"></div>
+						<ul class="sb_menu">
+							<li><a href="index.html#" onclick="doStyle(0)"><font size='2' color='#21a6ff'><< 首页</font></a></li>
+							<li><a href="tools.html#" onclick="doStyle(1)">JMeter</a></li>
+							<li><a href="tools.html#" onclick="doStyle(2)">WebBench</a></li>
+							<li><a href="tools.html#" onclick="doStyle(3)">ApachBench</a></li>
+						    <li><a href="http://192.168.111.50:18080/sohutest/Top.jsp"  target="_blank">服务器信息</a></li>
+						    
+						</ul>
+					</div>
+					<div class="gadget">
+						<h2>
+							<span>合作链接</span>
+						</h2>
+						<div class="clr"></div>
+						<ul class="ex_menu">
+							<li><a href="http://www.testin.cn"  target="_blank">Testin云测试</a><br>Cloud Testing From Testin</li>
+							<li><a href="http://www.51testing.com" target="_blank">51testing测试网</a><br/>51testing test network</li>
+								<li><a href="http://www.51sqae.com/portal.php" target="_blank">中国软件测试联盟</a><br/>
+								China Software testing Alliance</li>
+									<li><a href="http://www.ltesting.net/" target="_blank">领测国际</a><br/>
+								Neck Measurement International</li>
+								<li><a href="http://www.taobaotest.com/" target="_blank">淘测试</a><br/>
+								Taobao testing team</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="clr"></div>
+			</div>
+		</div>
+		<div class="fbg">
+			<div class="fbg_resize">
+				<div class="col c1">
+					<h2>
+						<span>我们的生活</span>
+					</h2>
+					 <a
+						href="#"><img src="/static/images/gallery_4.jpg" width="58"
+						height="58" alt="pix" /></a> <a href="#"><img
+						src="/static/images/gallery_5.jpg" width="58" height="58" alt="pix" /></a> <a
+						href="#"><img src="/static/images/gallery_6.jpg" width="58"
+						height="58" alt="pix" /></a>
+				</div>
+				<div class="col c2">
+					<h2>
+						<span>业界动态</span>
+					</h2>
+					<p>
+		
+					</p>
+				</div>
+				<div class="colhide">
+								<div id="showWeixin" ><img src="images/erweima.jpg" ></div>
+				<div id="showSina" ><img src="images/sina2.png" ></div>				
+				</div>
+				<div class="col c3">
+					<h2>
+						<span>关注我们</span>
+					</h2>
+						
+							
+								<a href="" target="_blank"><img
+							src="/static/images/line.png" alt="line"  width="48px" height="48px"/></a>
+								<a href="" target="_blank"><img
+							src="/static/images/baidu.png"   width="48px" height="48px"/></a>
+								<a href="" target="_blank"><img
+							src="/static/images/google.png" alt="google+"  width="48px" height="48px"/></a>
+							<a href="" target="_blank"><img
+							src="/static/images/facebook.png" alt="FB"  width="48px" height="48px"/></a><br>
+					
+				</div>
+				<div class="clr"></div>
+			</div>
+			<div class="footer">
+
+				<p class="lf"></p>
+				<div class="clr"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

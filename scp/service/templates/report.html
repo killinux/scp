@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block mainbar %}
+    <!--
+    <form  method="post" enctype="multipart/form-data" >
+        {{ form.as_table }}
+        <input name="submit" type="submit" value="提交" />
+        {% csrf_token %}
+    </form>
+     -->
+
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="div-test">
+            <div class="logintitle  report-info">
+                    <ul class="rep-ul">
+                         <li><span>脚本文件：</span>
+                             <label> 文件名 </label>
+                         </li>
+                         <li>
+                             <span>脚本说明：</span>
+                             <label> 脚本说明 </label>
+                         </li>
+                         <li><span>执行时间：</span>
+                              <label> 执行时间 </label>
+                         </li>
+                         <li><span>执行说明：</span>
+                             <label> 执行说明 </label>
+                         </li>
+                    </ul>
+           <table class="table table-bordered table-hover table-test table-rep">
+           <caption>测试摘要</caption>
+            <tr class="active">
+                <th>名称</th>
+                <th>请求</th>
+                <th>平均耗时</th>
+                <th>最短耗时</th>
+                <th>最长耗时</th>
+                <th>错误率</th>
+                <th>吞吐量</th>
+                <th>标准偏差</th>
+                <th>平均速率</th>
+                <th>传输字节数</th>
+            </tr>
+            {% for test in tests %}
+            <tr>
+                <td>{{ test.id }}</td>
+                <td>{{ test.test_name }}</td>
+                <td>{{ test.status }}</td>
+                <td>{{ test.status }}</td>
+                <td></td>
+                <td>{{ test.id }}</td>
+                <td>{{ test.test_name }}</td>
+                <td>{{ test.status }}</td>
+                <td>{{ test.status }}</td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+                <form name='form1' method='POST'>
+                   <input name="" type="button" class="btn btn-info run-btn " onclick="window.location.href='/member/reg_new.php'"  value="查看所有报告"/>
+                </form>
+            </div>
+               <blockquote>
+                  <footer>使用说明：为了保证良好的测试环境，一个加压机上只运行一个Jmeter，需要实时去检查空闲的加压机，然后按测试需要，选择适量加压机，一般并发200线程以内使用一个加压机，201-500使用2太加压机。</footer>
+               </blockquote>
+
+        </div>
+    </form>
+
+
+{% endblock mainbar %}

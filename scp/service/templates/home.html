@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block mainbar %}
+    <div class="div-all-report">
+       <div class="logintitle report-info">
+        <div class="allrep-top">
+            我的测试脚本数：  <label>  {{user_counts}} </label> <label style="margin-left: 40px;"></label>
+            我的测试报告数：  <label>{{user_counts}} </label>
+              <a href="test/add"><button type="button" class="btn btn-info all-rep-btn">新建脚本</button></a>
+        </div>
+{% endblock mainbar %}

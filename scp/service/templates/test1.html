@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block mainbar %}
+<div>我的测试</div>
+<table>
+    <th><td>ID</td><td>名字</td><td>状态</td><td>操作</td></th>
+    {% for test in tests %}
+    <tr>
+        <td>{{ test.id }}</td><td>{{ test.test_name }}</td><td>{{ test.status }}</td><td>
+        {% if test.status == 0 %}
+            <a href="test/{{ test.id }}/start">执行</a>
+        {% endif %}
+        {%  if test.status == 2 or test.status == 3 %}
+            <a href="test/{{ test.id }}/result">查看结果</a>
+        {% endif %}
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+<div><a href="test/add">新建</a></div>
+{% endblock mainbar %}

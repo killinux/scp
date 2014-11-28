@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block mainbar %}
+    <div class="div-all-report">
+       <div class="logintitle report-info">
+
+        <table class="table table-bordered table-hover table-test table-alrep">
+            <tr class="active">
+                <th>脚本名称</th>
+                <th>脚本说明</th>
+                <th>执行说明</th>
+                <th>测试报告</th>
+                <th>报告生成时间</th>
+            </tr>
+            {% for test in tests %}
+            <tr>
+                <td>{{ test.test_name }}</td>
+                <td>{{ test.script_description }}</td>
+                <td>{{ test.perform_description }}</td>
+                <td> {% if test.status == 0 %}
+                        <a href="test/{{ test.id }}/start">执行测试</a>
+                    {% endif %}
+                    {%  if test.status == 2 or test.status == 3 %}
+                        <a href="test/{{ test.id }}/result">查看结果</a>
+                    {% endif %}</td>
+                <td>{{ test.result_time|date:"Y-m-d H:i" }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+           <blockquote>
+              <footer>使用说明：首先需要测试者在本地调试好Jmter的测试脚本，然后上传Jmeter脚本文件，根据需求选择适量的加压机，然后执行测试，测试完成后会生成测试报告</footer>
+           </blockquote>
+
+    </div>
+{% endblock mainbar %}

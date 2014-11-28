@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<title>搜狐测试组</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="Shortcut Icon" href="static/images/logo_50x34.png" />
+
+<link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/static/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/static/js/mouse.js"></script>
+
+
+<!-- CuFon ends -->
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			{% block header %}
+                <div class="header_resize">
+				<div class="logo">
+					<h1>
+						<img src="/static/images/logo.png" width="190px" height="55px"><small>测试是一个很必要且很重要的环节</small>
+					</h1>
+				</div>
+				<div class="menu_nav">
+					<ul>
+						<li><a href="index.html"><span>首页</span></a></li>
+						<li><a href="service.html"><span>服务支持</span></a></li>
+						<li><a href="tools.html"><span>工具分享</span></a></li>
+						<li class="active"><a href="contact.html"><span>关于我们</span></a></li>
+					</ul>
+				</div>
+				<div class="clr"></div>
+
+				<div class="clr"></div>
+				<div class="/static/images/header_img"></div>
+
+
+			</div>
+            {% endblock %}
+		</div>
+		<div class="clr"></div>
+
+        <div class="content">
+		{% block content %}
+        <div class="content_resize">
+				<div class="mainbar">
+                    {% block mainbar %}
+					<div class="article">
+
+					</div>
+					<div id="SOHUCS"></div>
+                    {% endblock mainbar %}
+				</div>
+				<div class="sidebar">
+                    {% block sidebar %}
+					<div class="gadget">
+
+                    {% if user.is_authenticated %}
+                        {{ user.username }}
+                    {% endif %}
+
+					</div>
+					<div class="gadget">
+                        <h2><a href="/">首页</a></h2>
+						<h2>联系我们</h2>
+						<div class="clr"></div>
+						<ul class="sb_menu">
+							<li><a target="_blank"
+								href="http://wpa.qq.com/msgrd?v=3&uin=107607195&site=qq&menu=yes"><img
+									border="0" src="/static/images/qqzixun.png" width=160 /></a></li>
+							<li><a>QQ交流群:888888888</a></li>
+						</ul>
+					</div>
+					<div class="gadget">
+						<h2>
+							<span>合作链接</span>
+						</h2>
+						<div class="clr"></div>
+						<ul class="ex_menu">
+							<li><a href="http://www.testin.cn" target="_blank">Testin云测试</a><br>Cloud
+								Testing From Testin</li>
+							<li><a href="http://www.51testing.com" target="_blank">51testing测试网</a><br />51testing
+								test network</li>
+							<li><a href="http://www.51sqae.com/portal.php"
+								target="_blank">中国软件测试联盟</a><br /> China Software testing
+								Alliance</li>
+							<li><a href="http://www.ltesting.net/" target="_blank">领测国际</a><br />
+								Neck Measurement International</li>
+							<li><a href="http://www.taobaotest.com/" target="_blank">淘测试</a><br />
+								Taobao testing team</li>
+						</ul>
+					</div>
+                    {% endblock sidebar %}
+				</div>
+				<div class="clr"></div>
+			</div>
+        </div>
+        {% endblock %}
+
+
+
+		<div class="fbg">
+			<div class="fbg_resize">
+				<div class="col c1">
+					<h2>
+						<span>我们的生活</span>
+					</h2>
+					 <a
+						href="#"><img src="/static/images/gallery_4.jpg" width="58"
+						height="58" alt="pix" /></a> <a href="#"><img
+						src="/static/images/gallery_5.jpg" width="58" height="58" alt="pix" /></a> <a
+						href="#"><img src="/static/images/gallery_6.jpg" width="58"
+						height="58" alt="pix" /></a>
+				</div>
+				<div class="col c2">
+					<h2>
+						<span>业界动态</span>
+					</h2>
+					<p>
+
+					</p>
+				</div>
+				
+				<div class="col c3">
+					<h2>
+						<span>关注我们</span>
+					</h2>
+
+					<a href="" target="_blank"><img
+						src="/static/images/line.png" alt="line" width="48px" height="48px" /></a> <a
+						href="" target="_blank"><img src="/static/images/baidu.png"
+						width="48px" height="48px" /></a> <a href="" target="_blank"><img
+						src="/static/images/google.png" alt="google+" width="48px" height="48px" /></a>
+					<a href="" target="_blank"><img src="/static/images/facebook.png"
+						alt="FB" width="48px" height="48px" /></a><br>
+
+				</div>
+				<div class="clr"></div>
+			</div>
+			<div class="footer">
+            {% block footer %}
+            	<!-- <p class="lr">
+					<a href="http://www.sohu.com">搜狐</a> © Copyright 20130808
+				</p> -->
+				<p class="lf"></p>
+            <div class="clr"></div>
+            {% endblock %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

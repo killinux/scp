@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>云性能测试平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="Shortcut Icon" href="/static/images/logo_50x34.png" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+<!--=============顶部导航栏 ============ -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- 顶部导航-搜狐图片logo  -->
+            <div class="navbar-header">
+                <span class="mybrand-css"><a href="/"><img src="/static/images/logo.png" width="190px" height="50px"></a></span>
+            </div>
+            <!-- 顶部导航-搜狐文字logo -->
+            <div class="navbar-header">
+                <span class="navbar-brand-sohu">云性能测试平台</span>
+            </div>
+            <!-- 顶部导航-用户登录-退出按钮 -->
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="#">欢迎您! {{ user.username }}</a></li>
+                        <li><a href="/logout">退出</a></li>
+                    {% else %}
+                         <li><a href="/login">登录</a></li>
+                    {% endif %}
+
+
+                </ul>
+            </div>
+      </div>
+    </nav>
+<!--// END - 顶部导航栏  -->
+
+<!--=============  页面下部区域=========-->
+<!-- 页面主体部分 -->
+   <div class="container-fluid">
+        <div class="row">
+            <div class="main">
+
+                 <!-- ====================页面二级导航栏横条区域 ========================-->
+             {% if user.is_authenticated %}
+                 <div class="blog-masthead">
+                        <!-- 页面 二级 导航栏 设置 -->
+                        <div class="container">
+                            <nav class="blog-nav">
+                          <!--    <a class="blog-nav-item active" href="#">测试概览</a>-->
+                                <a class="blog-nav-item active " href="/home">测试概览</a>
+                              <a class="blog-nav-item" href="/test">脚本管理</a>
+                              <a class="blog-nav-item" href="/run">测试执行</a>
+                              <a class="blog-nav-item" href="/all_report">测试报告</a>
+                            </nav>
+                        </div>
+                        <!-- END 页面 二级 导航栏 -->
+                 </div>
+            {% endif %}
+                <!--END 页面二级导航栏横条区域 -->
+
+                <!--===============正文区域=============================-->
+                <!-- 页面内容置换区域 -->
+                <div class="main-content"  >
+                           {% block content %}
+                                 <div class="content_resize">
+                                    <div class="mainbar">
+                                        {% block mainbar %}
+
+                                        {% endblock mainbar %}
+                                    </div>
+                                </div>
+                           {% endblock content %}
+                </div>
+                <!--END 页面内容置换区域  -->
+
+            </div>
+            <!--//END  页面正文-->
+
+            <!--============页脚区域===============================-->
+
+
+
+                 <!-- Site footer 页面底部 页脚-->
+                <div class="footer-wrap">
+                    <div class="footer-base">
+                        <div class="footer-right">
+                            <p class="copyright">
+                                Copyright &copy; 2014 Sohu.com Inc. All Rights Reserved. 搜狐公司 版权所有
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--END  Site footer 页面底部 页脚-->
+          </div>
+     </div>
+
+  </body>
+<script>
+
+ /********************
+ * 取得除任务栏外的屏幕高度
+ *******************/
+    $(".main").css("min-height",screen.availHeight-140);
+
+</script>
+</html>

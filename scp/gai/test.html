@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block mainbar %}
+    <div class="div-test">
+        <a href="test/add"><button type="button" class="btn btn-info test-btn">新建脚本</button></a>
+        <table class="table table-bordered table-hover table-test">
+            <tr class="active"><th>序号</th>
+                <th>脚本名称</th>
+                <th>上传时间</th>
+                <th>更新时间</th>
+                <th>操作</th>
+            </tr>
+            {% for test in tests %}
+            <tr>
+                <td>{{ test.id }}</td>
+                <td>{{ test.test_name }}</td>
+                <td>{{ test.create_time|date:"Y-m-d H:i" }}</td>
+                <td>{{ test.update_time|date:"Y-m-d H:i" }}</td>
+                <td>
+                    {% if test.status == 0 %}
+                        <a href="test/{{ test.id }}/start">执行测试</a>
+                    {% endif %}
+                    {%  if test.status == 2 or test.status == 3 %}
+                        <a href="test/{{ test.id }}/result">查看结果</a>
+                    {% endif %}
+                 </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+           <blockquote>
+              <footer>使用说明：建一个脚本执行多次，可以生成多个测试报告</footer1>
+           </blockquote>
+    </div>
+{% endblock mainbar %}

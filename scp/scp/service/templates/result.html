@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block mainbar %}
+    <div>
+    <table border="1">
+        {% for record in records %}
+        <tr>
+            {% for item in record %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+   <div><p><a href="/test/">返回测试页</a> </p></div>
+{% endblock mainbar %}

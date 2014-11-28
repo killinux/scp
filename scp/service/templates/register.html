@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block mainbar %}
+<div>注册</div>
+    <form  method="post" enctype="multipart/form-data" >
+        {{form.as_p}}
+        <input name="submit" type="submit" value="提交" />
+        {% csrf_token %}
+    </form>
+{% endblock mainbar %}
